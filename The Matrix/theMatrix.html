@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Matrix</title>
+
+    <link rel="stylesheet" type="text/css" href="../../common/style.css">
+
+    <script type="text/javascript" src="../../lib/gl-matrix-min.js"></script>
+    <script type="text/javascript" src="../../lib/dat.gui.min.js"></script>
+    <script type="module" src="theMatrix.js"></script>
+
+    <script>
+        function show(item) {
+            item = document.getElementById(item).style.display = "table"
+        }
+
+        function close(item) {
+            item = document.getElementById(item).style.display = "none"
+        }
+    </script>
+</head>
+<body>
+    <div class="overlay">
+        <div id="pause-button">
+            <a href="javascript:show('pause');"><p>&#9612; &#9612;</p></a>
+        </div>
+    </div>
+    <div class="fullscreen">
+        <canvas></canvas>
+    </div>
+    <div id="pause">
+        <div id="credits">
+            <div class="row">
+                <div class="close"><a href="javascript:close('credits')"><p>X</p></a></div>
+            </div>
+        </div>
+
+        <div id="controls">
+            <div class="row">
+                <div class="close"><a href="javascript:close('controls')"><p>X</p></a></div>
+            </div>
+        </div>
+
+        <div id="menu">
+            <a href="/theMatrix.html"><div class="menu-item" ><h2>CONTINUE</h2></div></a>
+            <a href="javascript:show('controls');"><div class="menu-item"><h2>CONTROLS</h2></div></a>
+            <a href="javascript:show('credits');"><div class="menu-item"><h2>CREDITS</h2></div></a>
+            <a href="/index.html"><div class="menu-item"><h2>EXIT TO MENU</h2></div></a>
+        </div>
+    </div>
+</body>
+</html>
