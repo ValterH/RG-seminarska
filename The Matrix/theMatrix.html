@@ -17,16 +17,18 @@
         function close(item) {
             item = document.getElementById(item).style.display = "none"
         }
+
+        function unpause() {
+            document.getElementById("pause").style.display = "none";
+            var canvas = document.getElementById("canvas");
+            canvas.requestPointerLock()
+        }
     </script>
 </head>
 <body>
-    <div class="overlay">
-        <div id="pause-button">
-            <a href="javascript:show('pause');"><p>&#9612; &#9612;</p></a>
-        </div>
-    </div>
+    <div class="overlay"></div>
     <div class="fullscreen">
-        <canvas></canvas>
+        <canvas id="canvas"></canvas>
     </div>
     <div id="pause">
         <div id="credits">
@@ -42,7 +44,7 @@
         </div>
 
         <div id="menu">
-            <a href="/theMatrix.html"><div class="menu-item" ><h2>CONTINUE</h2></div></a>
+            <a href="javascript:unpause();"><div class="menu-item" ><h2>CONTINUE</h2></div></a>
             <a href="javascript:show('controls');"><div class="menu-item"><h2>CONTROLS</h2></div></a>
             <a href="javascript:show('credits');"><div class="menu-item"><h2>CREDITS</h2></div></a>
             <a href="/index.html"><div class="menu-item"><h2>EXIT TO MENU</h2></div></a>

@@ -23,11 +23,6 @@ body, html {
 /*
 MENU
 */
-#pause-button {
-    right: 3%;
-    position: fixed;
-    color: #000000;
-}
 
 #pause {
     position: fixed;
