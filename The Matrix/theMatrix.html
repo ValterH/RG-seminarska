@@ -23,12 +23,21 @@
             var canvas = document.getElementById("canvas");
             canvas.requestPointerLock()
         }
+
+        function start() {
+            var canvas = document.getElementById("canvas");
+            canvas.requestPointerLock();
+            document.getElementById("start").style.display = "none";
+        }
     </script>
 </head>
 <body>
     <div class="overlay"></div>
     <div class="fullscreen">
         <canvas id="canvas"></canvas>
+    </div>
+    <div id="start">
+        <a href="javascript:start()"><div class="menu-item" ><h2>PRESS ENTER TO START</h2></div></a>
     </div>
     <div id="pause">
         <div id="credits">

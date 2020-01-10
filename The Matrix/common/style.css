@@ -38,15 +38,27 @@ MENU
     font-family: serif;
 }
 
+#start {
+    width:90%;
+    margin:auto;
+    text-align: center;
+    background-color: black;
+    border-color: #247919;
+    color: #247919;
+    border-style: double;
+    position:fixed;
+    top:20%;
+    left:5%;
+}
+
 #menu {
-    width:50%;
+    width:90%;
     margin:auto;
     text-align: center;
     background-color: black;
     border-color: #247919;
     border-style: double;
     position:fixed;
-    width:90%;
     height:60%;
     top:20%;
     left:5%;
