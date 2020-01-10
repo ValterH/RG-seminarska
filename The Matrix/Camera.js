@@ -75,8 +75,12 @@ export default class Camera extends Node {
                 if(this.children.length == 0)
                     interacting = true;
                 else{
-                    scene.nodes.push(this.children[0]);
-                    this.removeChild(this.children[0]);
+                    var child = this.children[0];
+                    scene.nodes.push(child);
+                    this.removeChild(child);
+                    child.scale = child.Oscale;
+                    child.transform = child.lastTransform;
+                    child.update(child.transform, child.scale);
                 }
                 this.interacting = false;
             }

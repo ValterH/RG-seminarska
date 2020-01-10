@@ -22,6 +22,7 @@ class App extends Application {
         document.addEventListener('pointerlockchange', this.pointerlockchangeHandler);
 
         this.load(SCENE);
+        this.resize();
     }
 
     async load(uri) {
@@ -29,6 +30,7 @@ class App extends Application {
         const builder = new SceneBuilder(scene);
         this.scene = builder.build();
         this.physics = new Physics(this.scene);
+        this.builder = builder;
 
         // Find first camera.
         this.camera = null;
@@ -78,7 +80,6 @@ class App extends Application {
         if(this.pill == 1) {
             bluepill(this.pill);
             this.start();
-            document.body.requestFullscreen();
         }
     }
 
@@ -105,17 +106,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.querySelector('canvas');
     new App(canvas);
 });
-
-/*
-        PAUSE UNPAUSE
-TODO:
-blue pill
-    -textures
-red pill
-    -mansion
-    -textures
-    -move objects --> BUG (2 objects)
-*/
 
 document.addEventListener("keydown", pause);
 

@@ -26,7 +26,7 @@
     {
       "type": "model", 
       "mesh": 0,
-      "texture": 3,
+      "texture": 0,
       "aabb": {
         "min": [-5, -0.5, -5],
         "max": [5, 0.5, 5]
@@ -49,7 +49,7 @@
     {
       "type": "model",
       "mesh": 0,
-      "texture": 3,
+      "texture": 0,
       "aabb": {
         "min": [-0.5, -0.5, -5],
         "max": [0.5, 0.5, 5]
@@ -61,7 +61,7 @@
     {
       "type": "model",
       "mesh": 0,
-      "texture": 3,
+      "texture": 0,
       "aabb": {
         "min": [-5, -0.5, -0.5],
         "max": [5, 0.5, 0.5]
@@ -73,7 +73,7 @@
     {
       "type": "model",
       "mesh": 0,
-      "texture": 3,
+      "texture": 0,
       "aabb": {
         "min": [-5, -0.5, -0,5],
         "max": [5, 0.5, 0.5]
@@ -99,7 +99,7 @@
       "type": "model",
       "mesh": 0,
       "object":"wardrobe",
-      "texture": 2,
+      "texture": 3,
       "aabb": {
         "min": [-2, -2, -0.25],
         "max": [2, 2, 0.25]
@@ -123,7 +123,7 @@
       "type": "model",
       "mesh": 0,
       "object":"pc",
-      "texture": 1,
+      "texture": 5,
       "aabb": {
         "min": [-0.1, -0.5, -0.75],
         "max": [0.1, 0.5, 0.75]
@@ -135,7 +135,7 @@
       "type": "model",
       "mesh": 0,
       "object":"keyboard",
-      "texture": 1,
+      "texture": 6,
       "aabb": {
         "min": [-0.25, -0.05, -0.5],
         "max": [0.25, 0.05, 0.5]
@@ -147,7 +147,7 @@
       "type": "model",
       "mesh": 0,
       "object":"window1",
-      "texture": 2,
+      "texture": 7,
       "aabb": {
         "min": [-0.1, -1, -1],
         "max": [0.1, 1, 1]
@@ -159,7 +159,7 @@
       "type": "model",
       "mesh": 0,
       "object":"window2",
-      "texture": 2,
+      "texture": 8,
       "aabb": {
         "min": [-0.1, -1, -1],
         "max": [0.1, 1, 1]
@@ -183,7 +183,7 @@
       "type": "model",
       "mesh": 0,
       "object":"mattress",
-      "texture": 3,
+      "texture": 0,
       "aabb": {
         "min": [-1, -0.8, -2],
         "max": [1, 0.8, 2]
@@ -195,7 +195,7 @@
       "type": "model",
       "mesh": 0,
       "object":"pillow",
-      "texture": 1,
+      "texture": 4,
       "aabb": {
         "min": [-1, -0.8, -2],
         "max": [1, 0.8, 2]
@@ -205,11 +205,15 @@
     }
   ],
   "textures": [
-    "../common/images/wall1.jpg",
-    "../common/images/carpet.jpg",
+    "../common/images/whitepaint.jpg",
+    "../common/images/floor.png",
     "../common/images/door.png",
-    "../common/images/whitepaint.jpg"
-
+    "../common/images/bookshelf.png",
+    "../common/images/blue.png",
+    "../common/images/black.png",
+    "../common/images/keyboard.png",
+    "../common/images/window1.png",
+    "../common/images/window2.png"
   ],
   "meshes": [
     "../common/models/cube.json"

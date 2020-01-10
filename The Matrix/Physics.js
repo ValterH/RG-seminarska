@@ -20,9 +20,15 @@ export default class Physics {
                     }
                 }); 
                 if(node.children.length > 0) {
-                    var child = node.children[0];
-                    vec3.add(child.translation, node.translation, node.dist);
-                    child.updateTransform();
+                    node.children.forEach(child => {
+                        vec3.set(child.translation, 2, 0, -2);
+                        if (vec3.length(child.scale) > 1) {
+                            child.Oscale = vec3.clone(child.scale);
+                            vec3.normalize(child.scale, child.scale);
+                        }
+                        child.updateTransform();
+                        child.lastTransform = child.getGlobalTransform();
+                    });
                 } 
             }
         });
@@ -39,6 +45,10 @@ export default class Physics {
             && this.intervalIntersection(aabb1.min[2], aabb1.max[2], aabb2.min[2], aabb2.max[2]);
     }
 
+    RTD(radians){
+        return radians * (180/Math.PI);
+    }
+
     resolveCollision(a, b, p, i) {
         // Update bounding boxes with global translation.
         const ta = a.getGlobalTransform();
@@ -51,6 +61,7 @@ export default class Physics {
         const maxa = vec3.add(vec3.create(), posa, a.aabb.max);
         const minb = vec3.add(vec3.create(), posb, b.aabb.min);
         const maxb = vec3.add(vec3.create(), posb, b.aabb.max);
+        
 
         // Check if there is collision.
         const isColliding = this.aabbIntersection({
@@ -74,14 +85,12 @@ export default class Physics {
                 });
                 return b.color;
             }
-        } else {
-            if(b.movable && i)
-                if(!b.parent) {
-                    a.dist = vec3.create();
-                    vec3.sub(a.dist, b.translation, a.translation);
-                    a.addChild(b);
-                    this.scene.removeNode(b);
-                }
+        } else if(b.movable && i) {
+            if(!b.parent) {
+                a.addChild(b);
+                this.scene.removeNode(b);
+                return -1;
+            }
         }
         
         // Move node A minimally to avoid collision.

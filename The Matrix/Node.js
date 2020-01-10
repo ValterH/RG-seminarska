@@ -25,6 +25,13 @@ export default class Node {
         mat4.fromRotationTranslationScale(t, q, v, s);
     }
 
+    update(t, s) {
+        const degrees = this.rotation.map(x => x * 180 / Math.PI);
+        const q = quat.fromEuler(quat.create(), ...degrees);
+        const v = mat4.getTranslation(vec3.create(), t);
+        mat4.fromRotationTranslationScale(this.transform, q, v, s);
+    }
+
     getGlobalTransform() {
         if (!this.parent) {
             return mat4.clone(this.transform);
